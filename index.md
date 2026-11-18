@@ -14,19 +14,23 @@ This experiment investigates the question: **How does changing dropout probabili
 
 ## What is dropout?
 
-Dropout is a regularization technique. Regularization refers to methods that help prevent a model from relying too heavily on patterns that work only for the training examples. The dropout probability, \(p\), controls the chance that an activation is set to zero during training.
+Dropout is a regularization technique that helps prevent a model from relying too heavily on specific patterns in the training data. The dropout probability ($p$) determines the likelihood that an activation is temporarily set to zero during training.
 
-Conceptually, dropout can be written as
+Conceptually, dropout can be expressed as:
 
-\[
-\tilde{h} = h \odot m
-\]
+<div align="center">
 
-where \(h\) is a vector of activations, \(m\) is a random mask, and \(\odot\) means element-wise multiplication. In standard inverted dropout, the retained activations are also scaled during training so that their expected magnitude is preserved.
+**h̃ = h ⊙ m**
 
-If \(p=0.2\), approximately 20% of the activations handled by the dropout layer are disabled in a training pass. At \(p=0.5\), about half are disabled. With \(p=0.0\), dropout has no effect. During evaluation, dropout is turned off and all activations are used.
+</div>
 
-The network should not become overly dependent on particular activations. Too little dropout may provide limited regularization, while too much can make learning harder. That makes dropout probability useful to test experimentally.
+where **h** represents the vector of activations, **m** is a randomly generated binary mask, and **⊙** denotes element-wise multiplication. The mask determines which activations are retained and which are temporarily disabled during a training pass.
+
+In standard inverted dropout, retained activations are additionally scaled by 1/(1 − p) during training to maintain their expected magnitude.
+
+For example, when **p = 0.2**, approximately 20% of the activations are disabled. At **p = 0.5**, roughly half are dropped. When **p = 0.0**, dropout has no effect. During evaluation, dropout is disabled and the full network is used for prediction.
+
+The goal is to encourage the network to learn more robust representations instead of depending excessively on individual neurons. However, dropout must be applied carefully: too little may provide insufficient regularization, while too much may make learning difficult. This makes dropout probability an important hyperparameter to investigate experimentally.
 
 ## Experiment setup
 
