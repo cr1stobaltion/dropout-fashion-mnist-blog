@@ -1,7 +1,6 @@
 # Dropout: Teaching a Neural Network Not to Memorise
 ### A controlled Fashion-MNIST experiment with PyTorch Lightning
 
-> **Before publishing:** Run the notebook, replace every bracketed placeholder with your measured results, and add the three figures it generates. Do not submit invented results.
 
 ## Can a neural network learn too much?
 
