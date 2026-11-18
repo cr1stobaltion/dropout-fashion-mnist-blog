@@ -63,7 +63,7 @@ This notebook configuration uses a subset of the available training data and fiv
 
 ### Figure 1 — Training and validation loss
 
-![Training and validation loss curves](figures/figure1_loss_curves.png)
+![Training and validation loss curves](figure1_loss_curves.png)
 
 *Figure 1. Training (solid lines) and validation (dashed lines) cross-entropy loss by epoch for dropout probabilities 0.0, 0.2, 0.5, and 0.7. Both axes should be labelled and the legend should identify each setting.*
 
@@ -71,7 +71,7 @@ The saved notebook results show that the no-dropout model ended with training lo
 
 ### Figure 2 — Validation accuracy over epochs
 
-![Validation accuracy by epoch](figures/figure2_validation_accuracy.png)
+![Validation accuracy by epoch](figure2_validation_accuracy.png)
 
 *Figure 2. Validation accuracy by epoch for each dropout probability. The horizontal axis is epoch and the vertical axis is validation accuracy.*
 
@@ -79,7 +79,7 @@ The highest validation accuracy in the saved notebook output was 89.12%, achieve
 
 ### Figure 3 — Best validation accuracy comparison
 
-![Best validation accuracy by dropout probability](figures/figure3_best_validation_accuracy.png)
+![Best validation accuracy by dropout probability](figure3_best_validation_accuracy.png)
 
 *Figure 3. Highest validation accuracy observed during the experiment for each dropout probability. The comparison uses validation metrics, not test accuracy.*
 
